@@ -243,145 +243,59 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="frequencyAnalysis.html">Frequency Analysis</a>
+          <a href="config.html">Configuration</a>
         </li>
-        <li class="breadcrumb-item active">My Frequency</li>
+        <li class="breadcrumb-item active">New Configuration</li>
       </ol>
       <!-- Icon Cards-->
       <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-book"></i> Frequency Form
+            <i class="fa fa-book"></i> Instant Form
         </div>
         <div class="card-body">
             <form>
-                <div class="form-group">
-                    <label for="keyword">See how often you has been mention</label>
-                    <input class="form-control keyword" id="keyword" type="text" placeholder="Enter keyword">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="instant">Instant name</label>
+                            <input class="form-control instant" id="instant" type="text" placeholder="" autofocus required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="time">Schedule Time</label>
+                                <input class="form-control instant" id="time" type="time" required>
+                            </div>
+                        </div>
                 </div>
-                <button class="btn btn-primary btnFrequency" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Waiting..." style="width:20%; float:right; cursor:pointer">Submit</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="source">Source URL</label>
+                            <input class="form-control source" id="source" type="text" placeholder="www.example.com"  >
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="text-align:center">
+                        <button title="Add URL" class="btnAddList btn btn-sm btn-secondary" style="margin-top:35px"><span class="fa fa-exchange" ></span></button>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="instant">Source List</label>
+                            <ul class="list-group urlList"> 
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" style="text-align:right">
+                        <button class="btn btn-primary btnSave" style="width:10%;  cursor:pointer" disabled>Save</button>
+                        <button class="btn btn-secondary" type="reset" style="width:10%;  cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+                
             </form>
         </div>
-      </div>
-      <!-- Area Chart Example-->
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-3">
-                    <div class="card-header">
-                    <i class="fa fa-area-chart"></i> Frequency Chart</div>
-                    <div class="card-body"><h4 class="nullData" style="text-align:center; color:lightgrey">No data display</h4>
-                    <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-                <!-- Example Pie Chart Card-->
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-                    <div class="card-body"><h4 class="nullData" style="text-align:center; color:lightgrey">No data display</h4>
-                        <canvas id="myPieChart" width="100%" height="100"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-        </div>
-      <!-- Example DataTables Card-->
-      <div class="row">
-        <div class=col-md-8>
-          <div class="card mb-3">
-              <div class="card-header">
-                <i class="fa fa-table"></i> Data Table Example</div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Source</th>
-                        <th>Keyword</th>
-                        <th>Detail</th>
-                      </tr>
-                    </thead>
-                    <tbody class="item-list">
-                        
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-        </div>
-        <!-- <div class="col-md-4">
-          <div class="card mb-3">
-              <div class="card-header">
-                  <i class="fa fa-exchange"></i> Correlation</div>
-              <div class="card-body">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>Term</th>
-                        <th>Correlation Score</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody class="item-list2">
-                      <tr>
-                        <td>word 1</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 2</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 3</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 4</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 5</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                          <td>word 6</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 7</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 8</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 9</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 10</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="#" style="float:right">see more <span class="fa fa-right"></span></a>
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        </div> -->
       </div>
       
     </div>
@@ -417,31 +331,11 @@
       </div>
     </div>
 
-    <div class="modal fade" id="associativeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Corelation Words</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body" id="itemCorelation">
-            <div class="row">
-              <div class="col-md-12">
-                <canvas id="myBarChart" width="100" height="50"></canvas>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
@@ -454,178 +348,88 @@
     <script src="js/moment.js"></script>
   </div>
 
-  <script>
+    <script>
         $(document).ready(function(){
-            var i = 1;
-            $('.btnFrequency').on("click", function(e){
+            var array = ['a', 'b', 'v'];
+            console.log('array is: ',array);
+            var index = array.indexOf('b');
+            console.log('index is: ',index);
+            if (index > -1) {
+                array.splice(index, 1);
+            }
+            ///////////////
+            var i = 0;
+            var source = '';
+            var sourceList = [];
+            $('.btnAddList').on("click", function(e){
                 e.preventDefault();
-                $(this).button('loading');
-      
-                var valData = $('.keyword').val();
-                var valDate = [];
-                var valFrq = [];
+                source = $('.source').val();
+                
+                if (source == null || source == ''){
+                    alert('error');
+                    
+                }else{
+                    i += 1;
+                    var rowValue = '<li class="list-group-item sourceGroup'+i+'">'+ 
+                                    source +
+                                    '<button class="btnRemoveList'+i+' btn btn-sm btn-outline-danger" btnValue='+source+' style="float:right;cursor:pointer"><span class="fa fa-trash"></span></button>'+
+                                    '</li>';
+                    $('.urlList').append(rowValue);
+                    sourceList.push(source);
+                    console.log('sourceList is: ' , sourceList);
+                    $('.source').val('');
+                    $('.btnSave').removeAttr('disabled');
+                }
 
-                var urlData = 'http://139.59.235.227:5005/SDG_FC/'+ valData;
+                $('.btnRemoveList'+i).on("click", function(e){
+                    e.preventDefault();
+                    var indexValue = $(this).attr('btnValue');
+                    var sourceIndex = sourceList.indexOf(indexValue);
+                    if (sourceIndex > -1) {
+                        sourceList.splice(sourceIndex, 1);
+                    }
+                    $(this).parent().remove();
+                    console.log('array is: ',sourceList);
+                });
+            });
+            
+            $('.btnSave').on('click', function(e){
+                e.preventDefault();
+                var $this = $(this);
+                $this.button('loading');
+                    
+                var instantName = $('.instant').val();
+                var time = $('.instant').val();
+                var valSource = [];
+
+                var url = 'http://139.59.235.227:5005/SDG_FC/';
                 $.ajax({
-                    type: "GET",
-                    url: urlData,
+                    type: "POST",
+                    url: url,
+                    data: {instantName: instantName,
+                            time: time,
+                            source: sourceList},
+                    contentType: "application/json; charset=utf-8",
                     success: function(res){
-                      $(this).button('reset');
+                        $this.button('reset');
                         handleData(res);
                         console.log('this is result: ', res);
                     },
                     error: function(err){
-                      $(this).button('reset');
+                        $this.button('reset');
                         alert('Error ', err.status);
                         return err;
                     }
                 });
                 function handleData(res) {
                     if(!res.error){
-                      for(var d = 0 ; d < res.date.length; d++){
-                            valDate.push(moment(res.date[d]).format("MMM Do YY"));
-                            
-                        }
-                        console.log('the is format date outside loop: ',valDate);
-                        var rowValue = "<tr>"+
-                        "<td>"+ i +"</td>"+
-                        '<td>'+ res.domain + '</td>'+
-                        '<td>'+ res.your_keyword +'</td>'+
-                        '<td>'+ res.frequency +'</td>'+
-                        // '<td>'+ valDate +'</td>'+
-                        // '<td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>'+
-                        '</tr>';
 
-                        $('.item-list').prepend(rowValue);
-                        i = i + 1; 
-                        
-                        
-                        var total = 0;
-                        for (var n = 0; n < res.frequency.length; n++) {
-                            total += res.frequency[n] << 0;
-                        }
-                        console.log('this is total', total);
-                        // -- Pie Chart Example
-                        var ctx = document.getElementById("myPieChart");
-                        var myPieChart = new Chart(ctx, {
-                        type: 'pie',
-                        data: {
-                            labels: res.domain,
-                            datasets: [{
-                            data: [total],
-                            backgroundColor: ['#007bff'],
-                            }],
-                        },
-                        });
-
-                        //Line Chart
-                        $('.nullData').html('');
-                        var ctx = $('#myAreaChart').attr('id');
-                        var myLineChart = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels : valDate, // Date data
-                            datasets: [{
-                            label: res.your_keyword, // Data label
-                            lineTension: 0.3,
-                            backgroundColor: "rgba(2,117,216,0.2)",
-                            borderColor: "rgba(2,117,216,1)",
-                            pointRadius: 5,
-                            pointBackgroundColor: "rgba(2,117,216,1)",
-                            pointBorderColor: "rgba(255,255,255,0.8)",
-                            pointHoverRadius: 5,
-                            pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                            pointHitRadius: 20,
-                            pointBorderWidth: 2,
-                            data: res.frequency // Data frequency
-                            }],
-                        },
-                        options: {
-                            scales: {
-                            xAxes: [{
-                                time: {
-                                unit: 'date'
-                                },
-                                gridLines: {
-                                display: false
-                                },
-                                ticks: {
-                                maxTicksLimit: 7
-                                }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                min: 0,
-                                max: 10000,
-                                maxTicksLimit: 5
-                                },
-                                gridLines: {
-                                color: "rgba(0, 0, 0, .125)",
-                                }
-                            }],
-                            },
-                            legend: {
-                            display: true
-                            }
-                        }
-                        });
                     }else{
-                        alert(res);
+
                     }
-                };
+                }
             });
         });
-  </script>
-
-  <script>
-    // -- Bar Chart Example
-    var ctx = $('#myBarChart').attr('id');
-    var myLineChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ["January", "February", "March", "April", "May", "June"],
-        datasets: [{
-          label: "Revenue",
-          backgroundColor: "#ff6283",
-          borderColor: "#ff6283",
-          data: [4215, 5312, 6251, 7841, 9821, 14984],
-        },{
-          label: "Revenue",
-          backgroundColor: "#35a2eb",
-          borderColor: "#35a2eb",
-          data: [2, 3, 444, 5555, 9821, 14984],
-        }],
-      },
-      options: {
-        scales: {
-          xAxes: [{
-            time: {
-              unit: 'month'
-            },
-            gridLines: {
-              display: false
-            },
-            ticks: {
-              maxTicksLimit: 6
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              min: 0,
-              max: 50000,
-              maxTicksLimit: 5
-            },
-            gridLines: {
-              display: true
-            }
-          }],
-        },
-        legend: {
-          display: false
-        }
-      }
-    });
-  </script>
+    </script>
 </body>
-
 </html>

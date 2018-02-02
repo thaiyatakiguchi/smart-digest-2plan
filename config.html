@@ -243,145 +243,63 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="frequencyAnalysis.html">Frequency Analysis</a>
+          <a href="config.html">Configuration</a>
         </li>
-        <li class="breadcrumb-item active">My Frequency</li>
+        <li class="breadcrumb-item active"></li>
       </ol>
+      <div class=row>
+          <div class="col-md-12 mb-3">
+              <a href="createConfig.html" class="btn btn-outline-primary" style="float:right"><span class="fa fa-plus"></span> New</a>
+          </div>
+      </div>
       <!-- Icon Cards-->
       <div class="card mb-3">
         <div class="card-header">
-            <i class="fa fa-book"></i> Frequency Form
+            <i class="fa fa-book"></i> Search Instant
         </div>
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="keyword">See how often you has been mention</label>
-                    <input class="form-control keyword" id="keyword" type="text" placeholder="Enter keyword">
+                    <label for="keyword">Instant name</label>
+                    <input class="form-control keyword" id="keyword" type="text" placeholder="" autofocus>
                 </div>
-                <button class="btn btn-primary btnFrequency" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Waiting..." style="width:20%; float:right; cursor:pointer">Submit</button>
+                <button class="btn btn-primary btn-block btnFrequency" style="width:20%; float:right; cursor:pointer">Search</button>
             </form>
         </div>
       </div>
-      <!-- Area Chart Example-->
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card mb-3">
-                    <div class="card-header">
-                    <i class="fa fa-area-chart"></i> Frequency Chart</div>
-                    <div class="card-body"><h4 class="nullData" style="text-align:center; color:lightgrey">No data display</h4>
-                    <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-                <!-- Example Pie Chart Card-->
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fa fa-pie-chart"></i> Pie Chart Example</div>
-                    <div class="card-body"><h4 class="nullData" style="text-align:center; color:lightgrey">No data display</h4>
-                        <canvas id="myPieChart" width="100%" height="100"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-        </div>
+      
       <!-- Example DataTables Card-->
       <div class="row">
-        <div class=col-md-8>
+        <div class=col-md-12>
           <div class="card mb-3">
               <div class="card-header">
-                <i class="fa fa-table"></i> Data Table Example</div>
+                <i class="fa fa-table"></i> Instant List</div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Source</th>
-                        <th>Keyword</th>
-                        <th>Detail</th>
-                      </tr>
+                        <tr>
+                            <th>No</th>
+                            <th>Instant Name</th>
+                            <th>Website</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
                     </thead>
                     <tbody class="item-list">
-                        
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td><button class="btn btn-outline-secondary" type="button"><span class="fa fa-pencil"></span></button></td>
+                        </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
         </div>
-        <!-- <div class="col-md-4">
-          <div class="card mb-3">
-              <div class="card-header">
-                  <i class="fa fa-exchange"></i> Correlation</div>
-              <div class="card-body">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>Term</th>
-                        <th>Correlation Score</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody class="item-list2">
-                      <tr>
-                        <td>word 1</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 2</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 3</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 4</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                        <td>word 5</td>
-                        <td>54.3</td>
-                        <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                      </tr>
-                      <tr>
-                          <td>word 6</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 7</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 8</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 9</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                        <tr>
-                          <td>word 10</td>
-                          <td>54.3</td>
-                          <td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="#" style="float:right">see more <span class="fa fa-right"></span></a>
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        </div> -->
       </div>
       
     </div>
@@ -417,31 +335,11 @@
       </div>
     </div>
 
-    <div class="modal fade" id="associativeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Corelation Words</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body" id="itemCorelation">
-            <div class="row">
-              <div class="col-md-12">
-                <canvas id="myBarChart" width="100" height="50"></canvas>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="vendor/datatables/jquery.dataTables.js"></script>
@@ -456,176 +354,11 @@
 
   <script>
         $(document).ready(function(){
-            var i = 1;
-            $('.btnFrequency').on("click", function(e){
-                e.preventDefault();
-                $(this).button('loading');
-      
-                var valData = $('.keyword').val();
-                var valDate = [];
-                var valFrq = [];
-
-                var urlData = 'http://139.59.235.227:5005/SDG_FC/'+ valData;
-                $.ajax({
-                    type: "GET",
-                    url: urlData,
-                    success: function(res){
-                      $(this).button('reset');
-                        handleData(res);
-                        console.log('this is result: ', res);
-                    },
-                    error: function(err){
-                      $(this).button('reset');
-                        alert('Error ', err.status);
-                        return err;
-                    }
-                });
-                function handleData(res) {
-                    if(!res.error){
-                      for(var d = 0 ; d < res.date.length; d++){
-                            valDate.push(moment(res.date[d]).format("MMM Do YY"));
-                            
-                        }
-                        console.log('the is format date outside loop: ',valDate);
-                        var rowValue = "<tr>"+
-                        "<td>"+ i +"</td>"+
-                        '<td>'+ res.domain + '</td>'+
-                        '<td>'+ res.your_keyword +'</td>'+
-                        '<td>'+ res.frequency +'</td>'+
-                        // '<td>'+ valDate +'</td>'+
-                        // '<td><button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#associativeModal"><span class="fa fa-exchange"></span></button></td>'+
-                        '</tr>';
-
-                        $('.item-list').prepend(rowValue);
-                        i = i + 1; 
-                        
-                        
-                        var total = 0;
-                        for (var n = 0; n < res.frequency.length; n++) {
-                            total += res.frequency[n] << 0;
-                        }
-                        console.log('this is total', total);
-                        // -- Pie Chart Example
-                        var ctx = document.getElementById("myPieChart");
-                        var myPieChart = new Chart(ctx, {
-                        type: 'pie',
-                        data: {
-                            labels: res.domain,
-                            datasets: [{
-                            data: [total],
-                            backgroundColor: ['#007bff'],
-                            }],
-                        },
-                        });
-
-                        //Line Chart
-                        $('.nullData').html('');
-                        var ctx = $('#myAreaChart').attr('id');
-                        var myLineChart = new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels : valDate, // Date data
-                            datasets: [{
-                            label: res.your_keyword, // Data label
-                            lineTension: 0.3,
-                            backgroundColor: "rgba(2,117,216,0.2)",
-                            borderColor: "rgba(2,117,216,1)",
-                            pointRadius: 5,
-                            pointBackgroundColor: "rgba(2,117,216,1)",
-                            pointBorderColor: "rgba(255,255,255,0.8)",
-                            pointHoverRadius: 5,
-                            pointHoverBackgroundColor: "rgba(2,117,216,1)",
-                            pointHitRadius: 20,
-                            pointBorderWidth: 2,
-                            data: res.frequency // Data frequency
-                            }],
-                        },
-                        options: {
-                            scales: {
-                            xAxes: [{
-                                time: {
-                                unit: 'date'
-                                },
-                                gridLines: {
-                                display: false
-                                },
-                                ticks: {
-                                maxTicksLimit: 7
-                                }
-                            }],
-                            yAxes: [{
-                                ticks: {
-                                min: 0,
-                                max: 10000,
-                                maxTicksLimit: 5
-                                },
-                                gridLines: {
-                                color: "rgba(0, 0, 0, .125)",
-                                }
-                            }],
-                            },
-                            legend: {
-                            display: true
-                            }
-                        }
-                        });
-                    }else{
-                        alert(res);
-                    }
-                };
-            });
+            
         });
   </script>
 
-  <script>
-    // -- Bar Chart Example
-    var ctx = $('#myBarChart').attr('id');
-    var myLineChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ["January", "February", "March", "April", "May", "June"],
-        datasets: [{
-          label: "Revenue",
-          backgroundColor: "#ff6283",
-          borderColor: "#ff6283",
-          data: [4215, 5312, 6251, 7841, 9821, 14984],
-        },{
-          label: "Revenue",
-          backgroundColor: "#35a2eb",
-          borderColor: "#35a2eb",
-          data: [2, 3, 444, 5555, 9821, 14984],
-        }],
-      },
-      options: {
-        scales: {
-          xAxes: [{
-            time: {
-              unit: 'month'
-            },
-            gridLines: {
-              display: false
-            },
-            ticks: {
-              maxTicksLimit: 6
-            }
-          }],
-          yAxes: [{
-            ticks: {
-              min: 0,
-              max: 50000,
-              maxTicksLimit: 5
-            },
-            gridLines: {
-              display: true
-            }
-          }],
-        },
-        legend: {
-          display: false
-        }
-      }
-    });
-  </script>
+  
 </body>
 
 </html>
