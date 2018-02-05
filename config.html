@@ -249,6 +249,7 @@
       </ol>
       <div class=row>
           <div class="col-md-12 mb-3">
+                <button  class="btn btn-outline-primary btnTest" ><span class="fa fa-plus"></span> test api</button>
               <a href="createConfig.html" class="btn btn-outline-primary" style="float:right"><span class="fa fa-plus"></span> New</a>
           </div>
       </div>
@@ -263,7 +264,7 @@
                     <label for="keyword">Instant name</label>
                     <input class="form-control keyword" id="keyword" type="text" placeholder="" autofocus>
                 </div>
-                <button class="btn btn-primary btn-block btnFrequency" style="width:20%; float:right; cursor:pointer">Search</button>
+                <button class="btn btn-primary btn-block btnSearch" style="width:20%; float:right; cursor:pointer">Search</button>
             </form>
         </div>
       </div>
@@ -283,17 +284,12 @@
                             <th>Instant Name</th>
                             <th>Website</th>
                             <th>Date</th>
-                            <th>Action</th>
+                            <!-- <th>Action</th> -->
                         </tr>
                     </thead>
+                    
                     <tbody class="item-list">
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td><button class="btn btn-outline-secondary" type="button"><span class="fa fa-pencil"></span></button></td>
-                        </tr>
+                        
                     </tbody>
                   </table>
                 </div>
@@ -354,7 +350,43 @@
 
   <script>
         $(document).ready(function(){
-            
+            var urlData = 'http://139.59.235.227:5005/getallinstance';
+                $.ajax({
+                    type: "GET",
+                    url: urlData,
+                    success: function(res){
+                      $(this).button('reset');
+                        handleData(res);
+                        console.log('this is result: ', res);
+                    },
+                    error: function(err){
+                      $(this).button('reset');
+                        alert('Error ', err.status);
+                        return err;
+                    }
+                });
+                function handleData(res) {
+                    if(!res.error){
+                        for (var n = 0; n < res.instance_name.length; n++){
+                            var rowValue = '<tr>'+
+                            "<td>"+ (n+1) +"</td>"+
+                            '<td>'+ res.instance_name[n] + '</td>'+
+                            '<td>'+ res.time[n] +'</td>'+
+                            '<td>'+ res.url[n] +'</td>'+
+                            '</tr>';
+
+                            $('.item-list').prepend(rowValue);
+                        }
+                    }else{
+                        alert(res.error);
+                    }
+                }
+            $('.btnSearch').on('click', function(e){
+                e.preventDefault();
+
+                
+            });
+
         });
   </script>
 

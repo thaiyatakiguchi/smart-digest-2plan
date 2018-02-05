@@ -9,13 +9,16 @@
   <meta name="author" content="">
   <title>Smart Digest</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="css/app.css">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -256,7 +259,7 @@
             <form>
                 <div class="form-group">
                     <label for="keyword">See how often you has been mention</label>
-                    <input class="form-control keyword" id="keyword" type="text" placeholder="Enter keyword">
+                    <input class="form-control keyword" id="keyword" type="text"  placeholder="Enter keyword" data-role="tagsinput"  required>
                 </div>
                 <button class="btn btn-primary btnFrequency" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Waiting..." style="width:20%; float:right; cursor:pointer">Submit</button>
             </form>
@@ -452,6 +455,9 @@
     <script src="js/sb-admin-datatables.min.js"></script>
     <!-- <script src="js/sb-admin-charts.js"></script> -->
     <script src="js/moment.js"></script>
+    
+    <script src="js/bootstrap-tagsinput.min.js"></script>
+    <script src="js/app.js"></script>
   </div>
 
   <script>

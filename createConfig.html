@@ -264,7 +264,7 @@
                     <div class="col-md-6">
                             <div class="form-group">
                                 <label for="time">Schedule Time</label>
-                                <input class="form-control instant" id="time" type="time" required>
+                                <input class="form-control time" id="time" type="time" required>
                             </div>
                         </div>
                 </div>
@@ -350,13 +350,13 @@
 
     <script>
         $(document).ready(function(){
-            var array = ['a', 'b', 'v'];
-            console.log('array is: ',array);
-            var index = array.indexOf('b');
-            console.log('index is: ',index);
-            if (index > -1) {
-                array.splice(index, 1);
-            }
+            // var array = ['a', 'b', 'v'];
+            // console.log('array is: ',array);
+            // var index = array.indexOf('b');
+            // console.log('index is: ',index);
+            // if (index > -1) {
+            //     array.splice(index, 1);
+            // }
             ///////////////
             var i = 0;
             var source = '';
@@ -366,8 +366,7 @@
                 source = $('.source').val();
                 
                 if (source == null || source == ''){
-                    alert('error');
-                    
+                    alert('Source URL cannot be NULL');
                 }else{
                     i += 1;
                     var rowValue = '<li class="list-group-item sourceGroup'+i+'">'+ 
@@ -390,6 +389,7 @@
                     }
                     $(this).parent().remove();
                     console.log('array is: ',sourceList);
+                    
                 });
             });
             
@@ -397,33 +397,42 @@
                 e.preventDefault();
                 var $this = $(this);
                 $this.button('loading');
-                    
-                var instantName = $('.instant').val();
-                var time = $('.instant').val();
-                var valSource = [];
-
-                var url = 'http://139.59.235.227:5005/SDG_FC/';
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: {instantName: instantName,
-                            time: time,
-                            source: sourceList},
-                    contentType: "application/json; charset=utf-8",
-                    success: function(res){
-                        $this.button('reset');
-                        handleData(res);
-                        console.log('this is result: ', res);
-                    },
-                    error: function(err){
-                        $this.button('reset');
-                        alert('Error ', err.status);
-                        return err;
-                    }
-                });
+                if (sourceList == null || sourceList == '' || instantName == null || instantName == '' || time == null || time == ''){
+                    alert('data cannot be NULL');
+                }else{
+                    var instantName = $('.instant').val();
+                    var time = $('.time').val();
+                    var valSource = [];
+                    console.log('data for api: ', instantName + ' time is: ', time + ' source list is: ', sourceList);
+                    var url = 'http://139.59.235.227:5005/instance';
+                    var obj = {
+                        instance_name: instantName,
+                        time: time,
+                        url: sourceList
+                    };
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: JSON.stringify(obj),
+                        contentType: "application/json",
+                        success: function(res){
+                            $this.button('reset');
+                            handleData(res);
+                            console.log('this is result: ', res);
+                        },
+                        error: function(err){
+                            $this.button('reset');
+                            // alert('Error ', err.status);
+                            return err;
+                        }
+                    });
+                }
                 function handleData(res) {
                     if(!res.error){
-
+                        alert(res);
+                        if(window.confirm('Really go to another page?')){
+                            window.location.replace("config.html");
+                        }
                     }else{
 
                     }
